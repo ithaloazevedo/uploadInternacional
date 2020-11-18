@@ -24,5 +24,10 @@ if($signatures[1]){
   }
 }
 
+#Pegando assinaturas notIcpbr
+$notIcpbrSignature = $decodedData->report->signatures->notIcpbrSignature;
+console_log($notIcpbrSignature);
+$notIcpbrSubjectName = $decodedData->report->signatures->notIcpbrSignature->certification->signer->subjectName;
+
 
 ?>
