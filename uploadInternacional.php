@@ -47,5 +47,13 @@ elseif(isset($signatures)) {
   }
 }
 
+#Variáveis
+$verificationDate = $decodedData->report->date->verificationDate; #data de verificação
+$fileName = $decodedData->report->software->sourceFile; #nome do arquivo
+$softwareVersion = $decodedData->report->software->version; #versão do software
+$validSignature = $decodedData->report->signatures->signature->certification->signer->validSignature; #validade das assinaturas
+$signerName = $decodedData->report->signatures->signature->certification->signer->subjectName; #Nome assinatura
+$certPathValid = $decodedData->report->signatures->signature->certification->signer->certPathValid;
+$asymmetricCipher = $decodedData->report->signatures->signature->integrity->asymmetricCipher;
 
 ?>
