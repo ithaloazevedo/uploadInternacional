@@ -29,5 +29,23 @@ $notIcpbrSignature = $decodedData->report->signatures->notIcpbrSignature;
 console_log($notIcpbrSignature);
 $notIcpbrSubjectName = $decodedData->report->signatures->notIcpbrSignature->certification->signer->subjectName;
 
+# Pegando os certificados
+if(is_array($signatures)) {
+  foreach($signatures as $sig) {
+    array_push($certs, $sig->certification->signer->certificate);
+
+  }
+}
+elseif(isset($signatures)) {
+  $certs = $decodedData->report->signatures->signature->certification->signer->certificate;
+  console_log($certs);
+  for($i = 0; $i < sizeof($certs);$i++){
+      console_log($certs[$i]);
+  }
+  foreach ($certs as $cert) {
+      console_log($cert);
+  }
+}
+
 
 ?>
