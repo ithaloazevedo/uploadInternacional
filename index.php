@@ -56,4 +56,10 @@ $signerName = $decodedData->report->signatures->signature->certification->signer
 $certPathValid = $decodedData->report->signatures->signature->certification->signer->certPathValid;
 $asymmetricCipher = $decodedData->report->signatures->signature->integrity->asymmetricCipher;
 
+date_default_timezone_set("America/Sao_Paulo");
+
+$full_start = microtime(TRUE);
+# Só são permitidos PDFs
+$allowedMimes = array('pdf' => 'application/pdf');
+$messages = array();
 ?>
